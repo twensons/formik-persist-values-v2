@@ -1,7 +1,7 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import { Persist } from '../src/formik-persist';
-import { Formik, FormikProps, Form } from 'formik';
+import { PersistFormikValues } from '../src/PersistFormikValues';
+import { Formik, FormikProps } from 'formik';
 
 // tslint:disable-next-line:no-empty
 const noop = () => {};
@@ -24,7 +24,7 @@ describe('Formik Persist', () => {
           injected = props;
           return (
             <div>
-              <Persist name="signup" debounce={0} />
+              <PersistFormikValues name="signup" debounce={0} />
             </div>
           );
         }}
@@ -53,7 +53,11 @@ describe('Formik Persist', () => {
           injected = props;
           return (
             <div>
-              <Persist name="signup" debounce={0} isSessionStorage />
+              <PersistFormikValues
+                name="signup"
+                debounce={0}
+                isSessionStorage={true}
+              />
             </div>
           );
         }}
