@@ -6,7 +6,7 @@ import sourceMaps from 'rollup-plugin-sourcemaps';
 import uglify from 'rollup-plugin-uglify';
 
 const shared = {
-  entry: `compiled/formik-persist-values.js`,
+  entry: `compiled/PersistFormikValues.js`,
   sourceMap: true,
   external: ['react', 'formik', 'prop-types', 'lodash.isequal'],
   globals: {
@@ -22,7 +22,7 @@ export default [
   Object.assign({}, shared, {
     moduleName: 'FormikPersist',
     format: 'umd',
-    dest: 'dist/formik-persist-values.umd.js',
+    dest: 'dist/PersistFormikValues.umd.js',
     plugins: [
       resolve(),
       commonjs({
@@ -36,8 +36,8 @@ export default [
 
   Object.assign({}, shared, {
     targets: [
-      { dest: 'dist/formik-persist-values.es6.js', format: 'es' },
-      { dest: 'dist/formik-persist-values.js', format: 'cjs' },
+      { dest: 'dist/PersistFormikValues.es6.js', format: 'es' },
+      { dest: 'dist/PersistFormikValues.js', format: 'cjs' },
     ],
     plugins: [
       resolve(),

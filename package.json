@@ -15,9 +15,9 @@
     "localstorage",
     "hoc"
   ],
-  "main": "dist/formik-persist-values.js",
-  "module": "dist/formik-persist-values.es6.js",
-  "typings": "dist/formik-persist-values.d.ts",
+  "main": "dist/PersistFormikValues.js",
+  "module": "dist/PersistFormikValues.es6.js",
+  "typings": "dist/PersistFormikValues.d.ts",
   "files": [
     "dist"
   ],
