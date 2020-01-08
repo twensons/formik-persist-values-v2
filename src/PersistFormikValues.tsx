@@ -101,7 +101,12 @@ const PersistFormikValuesMemo: FC<PersistFormikValues.Props> = props => {
       try {
         const persistedValues = JSON.parse(persistedString);
         // Initial values should be merged with persisted
-        setValues({ ...initialValues, ...persistedValues });
+        if (
+          stringValues !==
+          JSON.stringify({ ...initialValues, ...persistedValues })
+        ) {
+          setValues({ ...initialValues, ...persistedValues });
+        }
       } catch (error) {
         console.error('Parse persisted values is not possible', error);
       }
