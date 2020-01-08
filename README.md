@@ -1,6 +1,6 @@
-# Formik Persist
+# Formik Persist Values
 
-Persist and rehydrate a [Formik](https://github.com/jaredpalmer/formik) form.
+Persist and rehydrate a [Formik](https://github.com/jaredpalmer/formik) form values.
 
 ```
 npm install formik-persist-values --save
@@ -8,20 +8,21 @@ npm install formik-persist-values --save
 
 # Basic Usage
 
-Just import the `<Persist >` component and put it inside any Formik form. It renders `null`!
+Just import the `<PersistFormikValues >` component and put it inside any Formik form. It renders `null`!
 
 ```js
 import React from 'react';
 import { Formik, Field, Form } from 'formik';
-import { Persist } from 'formik-persist-fork';
+import { PersistFormikValues } from 'formik-persist-values';
 
 export const Signup = () => (
   <div>
-    <h1>My Cool Persisted Form</h1>
+    <h1>My Cool Persisted Values</h1>
     <Formik
       onSubmit={values => console.log(values)}
       initialValues={{ firstName: '', lastName: '', email: '' }}
-      render={props => (
+    >
+      {props => (
         <Form className="whatever">
           <Field name="firstName" placeholder="First Name" />
           <Field name="lastName" placeholder="Last Name" />
@@ -30,7 +31,7 @@ export const Signup = () => (
           <Persist name="signup-form" />
         </Form>
       )}
-    />
+    </Formik>
   </div>
 );
 ```
