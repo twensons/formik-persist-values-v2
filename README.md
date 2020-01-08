@@ -40,8 +40,9 @@ export const Signup = () => (
 
 - `name: string`: LocalStorage key to save form state to
 - `debounce:? number`: Default is `300`. Number of ms to debounce the function that saves form state.
-- `isSessionStorage:? boolean`: default is `false` . Send if you want Session storage inplace of Local storage
-- `persistInvalid:? boolean`: default is `false` . Persist if you want save invalid values
+- `isSessionStorage:? boolean`: default is `false` . Send if you want Session storage instead of Local storage
+- `persistInvalid:? boolean`: default is `false` . Persist if you want to save invalid values
+- `hashInitials:? boolean`: default is `false` . Hash initials values to prevent conflict between initialValues and persistedValues.
 
 ## Author
 
@@ -52,7 +53,6 @@ export const Signup = () => (
 - Jared Palmer [@jaredpalmer](https://twitter.com/jaredpalmer)
 - [formik-persist](https://github.com/jaredpalmer/formik-persist)
 
-## Todo
+## Thanks
 
-- Alternative storages (localForage)
-- Support AsyncStorage for React Native
+- Alex Kuchun [@kuchun](https://github.com/kuchun)
