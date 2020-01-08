@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { useMemo, useEffect, memo, useCallback, FC } from 'react';
 
 import { FormikValues, useFormikContext } from 'formik';
 import useDebounce from 'react-use/lib/useDebounce';
@@ -23,7 +23,7 @@ const usePersistedString = (
 ): [string | null, (values: FormikValues) => void] => {
   const { name, isSessionStorage } = props;
   const isBrowser = useBrowser();
-  const state = React.useMemo(() => {
+  const state = useMemo(() => {
     if (isBrowser) {
       if (isSessionStorage) {
         return window.sessionStorage.getItem(name);
@@ -34,7 +34,7 @@ const usePersistedString = (
     return null;
   }, [name, isSessionStorage]);
 
-  const handlePersistValues = React.useCallback((values: FormikValues) => {
+  const handlePersistValues = useCallback((values: FormikValues) => {
     if (isBrowser) {
       if (isSessionStorage) {
         window.sessionStorage.setItem(name, JSON.stringify(values));
@@ -55,12 +55,12 @@ const usePersistedString = (
   return [null, handlePersistValues];
 };
 
-const PersistFormikValuesMemo: React.FC<PersistFormikValues.Props> = props => {
+const PersistFormikValuesMemo: FC<PersistFormikValues.Props> = props => {
   const { debounce = 300, persistInvalid } = props;
   const { values, setValues, isValid } = useFormikContext<any>();
   const [persistedString, persistValues] = usePersistedString(props);
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (persistedString) {
       try {
         const persistedValues = JSON.parse(persistedString);
@@ -84,6 +84,6 @@ const PersistFormikValuesMemo: React.FC<PersistFormikValues.Props> = props => {
   return null;
 };
 
-export const PersistFormikValues = React.memo(PersistFormikValuesMemo);
+export const PersistFormikValues = memo(PersistFormikValuesMemo);
 
 export default PersistFormikValues;
