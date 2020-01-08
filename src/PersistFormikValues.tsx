@@ -23,6 +23,7 @@ const usePersistedString = (
 ): [string | null, (values: FormikValues) => void] => {
   const { name, isSessionStorage } = props;
   const isBrowser = useBrowser();
+
   const state = useMemo(() => {
     if (isBrowser) {
       if (isSessionStorage) {
@@ -44,15 +45,7 @@ const usePersistedString = (
     }
   }, []);
 
-  try {
-    if (!!state) {
-      return [state, handlePersistValues];
-    }
-  } catch (error) {
-    return [null, handlePersistValues];
-  }
-
-  return [null, handlePersistValues];
+  return [state, handlePersistValues];
 };
 
 const PersistFormikValuesMemo: FC<PersistFormikValues.Props> = props => {
