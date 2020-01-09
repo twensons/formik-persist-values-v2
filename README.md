@@ -1,5 +1,14 @@
 # Formik Persist Values
 
+<p>
+  <img height="20px" src="https://badgen.net/npm/license/formik-persist-values" />
+  <img height="20px" src="https://badgen.net/npm/v/formik-persist-values" />
+  <img height="20px" src="https://badgen.net/npm/dependents/formik-persist-values" />
+  <img height="20px" src="https://badgen.net/npm/types/formik-persist-values" />
+  <img height="20px" src="https://badgen.net/bundlephobia/min/formik-persist-values" />
+  <img height="20px" src="https://badgen.net/bundlephobia/minzip/formik-persist-values" />
+</p>
+
 Persist and rehydrate a [Formik](https://github.com/jaredpalmer/formik) form values.
 
 ```
