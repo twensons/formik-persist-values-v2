@@ -3,16 +3,23 @@
 <p>
   <a href="https://www.npmjs.com/package/formik-persist-values">
     <img height="20px" src="https://badgen.net/npm/license/formik-persist-values" />
+  </a>
+  <a href="https://www.npmjs.com/package/formik-persist-values">
     <img height="20px" src="https://badgen.net/npm/v/formik-persist-values" />
+  </a>
+  <a href="https://www.npmjs.com/package/formik-persist-values">
     <img height="20px" src="https://badgen.net/npm/dependents/formik-persist-values" />
+  </a>
+  <a href="https://www.npmjs.com/package/formik-persist-values">
     <img height="20px" src="https://badgen.net/npm/types/formik-persist-values" />
   </a>
   <a href="https://github.com/kolengri/formik-persist-values#readme">
     <img height="20px" src="https://badgen.net/github/issues/kolengri/formik-persist-values" />
   </a>
-
   <a href="https://bundlephobia.com/result?p=formik-persist-values">
     <img height="20px" src="https://badgen.net/bundlephobia/min/formik-persist-values" />
+  </a>
+  <a href="https://bundlephobia.com/result?p=formik-persist-values">
     <img height="20px" src="https://badgen.net/bundlephobia/minzip/formik-persist-values" />
   </a>
 </p>
