@@ -100,12 +100,10 @@ const PersistFormikValuesMemo: FC<PersistFormikValues.Props> = props => {
       // Catches invalid json
       try {
         const persistedValues = JSON.parse(persistedString);
+        const newValues = { ...initialValues, ...persistedValues };
         // Initial values should be merged with persisted
-        if (
-          stringValues !==
-          JSON.stringify({ ...initialValues, ...persistedValues })
-        ) {
-          setValues({ ...initialValues, ...persistedValues });
+        if (stringValues !== JSON.stringify(newValues)) {
+          setValues(newValues);
         }
       } catch (error) {
         console.error('Parse persisted values is not possible', error);
@@ -125,5 +123,3 @@ const PersistFormikValuesMemo: FC<PersistFormikValues.Props> = props => {
 };
 
 export const PersistFormikValues = memo(PersistFormikValuesMemo);
-
-export default PersistFormikValues;
