@@ -62,7 +62,7 @@ describe('Formik Persist', () => {
                 <PersistFormikValues
                   name="signup"
                   debounce={0}
-                  isSessionStorage={true}
+                  storage="sessionStorage"
                 />
               </div>
             );
