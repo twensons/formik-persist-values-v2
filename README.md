@@ -67,8 +67,9 @@ export const Signup = () => (
 ### Props
 
 - `name: string`: LocalStorage key to save form state to
+- `ignoreValues: string[]`: Provide array of keys if you need to do not persist some values
 - `debounce:? number`: Default is `300`. Number of ms to debounce the function that saves form state.
-- `isSessionStorage:? boolean`: default is `false` . Send if you want Session storage instead of Local storage
+- `storage:? 'localStorage' | 'sessionStorage' | Storage`: default is `localStorage` . Send if you want Session storage or your own storage instead of Local storage
 - `persistInvalid:? boolean`: default is `false` . Persist if you want to save invalid values
 - `hashInitials:? boolean`: default is `false` . Hash initials values to prevent conflict between initialValues and persistedValues.
 
