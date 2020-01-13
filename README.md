@@ -56,7 +56,7 @@ export const Signup = () => (
           <Field name="lastName" placeholder="Last Name" />
           <Field name="email" type="email" placeholder="Email Address" />
           <button type="submit">Submit</button>
-          <Persist name="signup-form" />
+          <PersistFormikValues name="signup-form" />
         </Form>
       )}
     </Formik>
