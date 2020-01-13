@@ -16,6 +16,8 @@ export interface PersistFormikValuesProps {
   persistInvalid?: boolean;
   // Hash form initial values for storage key generation
   hashInitials?: boolean;
+  // Number of hash specificity must be increased if there is some problem with wrong cache hashes
+  hashSpecificity?: number;
   // List of not persisted values
   ignoreValues?: string[];
 }
@@ -23,14 +25,14 @@ export interface PersistFormikValuesProps {
  * Hash function to do not persist different initial values
  * @param obj
  */
-const getHash = (obj: any) => {
+const getHash = (obj: any, specificity: number = 7) => {
   let hc = 0;
   try {
     const chars = JSON.stringify(obj).replace(/\{|\"|\}|\:|,/g, '');
     const len = chars.length;
     for (let i = 0; i < len; i++) {
       // Bump 7 to larger prime number to increase uniqueness
-      hc += chars.charCodeAt(i) * 7;
+      hc += chars.charCodeAt(i) * specificity;
     }
   } catch (error) {
     hc = 0;
@@ -58,13 +60,16 @@ const useStorage = (props: PersistFormikValuesProps): Storage | undefined => {
 const usePersistedString = (
   props: PersistFormikValuesProps
 ): [string | null, (values: FormikValues) => void] => {
-  const { name: defaultName, hashInitials } = props;
+  const { name: defaultName, hashInitials, hashSpecificity } = props;
   const { initialValues } = useFormikContext<any>();
   const keyName = `${defaultName}${KEY_DELIMITER}`;
 
   const name = useMemo(
-    () => (hashInitials ? `${keyName}${getHash(initialValues)}` : defaultName),
-    [defaultName, hashInitials, JSON.stringify(initialValues)]
+    () =>
+      hashInitials
+        ? `${keyName}${getHash(initialValues, hashSpecificity)}`
+        : defaultName,
+    [defaultName, hashInitials, JSON.stringify(initialValues), hashSpecificity]
   );
 
   const storage = useStorage(props);
@@ -80,6 +85,7 @@ const usePersistedString = (
     (values: FormikValues) => {
       if (storage) {
         storage.setItem(name, JSON.stringify(values));
+        // Remove all past cached values for this form
         Object.keys(storage).forEach(key => {
           if (key.indexOf(keyName) > -1 && key !== name) {
             storage.removeItem(key);

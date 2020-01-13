@@ -72,6 +72,7 @@ export const Signup = () => (
 - `storage:? 'localStorage' | 'sessionStorage' | Storage`: default is `localStorage` . Send if you want Session storage or your own storage instead of Local storage
 - `persistInvalid:? boolean`: default is `false` . Persist if you want to save invalid values
 - `hashInitials:? boolean`: default is `false` . Hash initials values to prevent conflict between initialValues and persistedValues.
+- `hashSpecificity:? number`: default is `number` . Hash initials values specificity to prevent conflict between cache hashes.
 
 ## Author
 
