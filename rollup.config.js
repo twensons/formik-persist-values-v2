@@ -8,7 +8,6 @@ import { terser } from 'rollup-plugin-terser';
 const globalPackages = {
   react: 'React',
   formik: 'formik',
-  'prop-types': 'PropTypes',
 };
 
 const shared = {
@@ -19,9 +18,9 @@ const shared = {
 
 export default [
   Object.assign({}, shared, {
-    moduleName: 'PersistFormikValues',
-    format: 'umd',
     output: {
+      format: 'umd',
+      name: 'PersistFormikValues',
       exports: 'named',
       sourcemap: true,
       global: globalPackages,
