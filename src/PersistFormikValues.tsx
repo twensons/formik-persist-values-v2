@@ -1,4 +1,4 @@
-import { FC, memo, useCallback, useEffect, useMemo, useState } from 'react';
+import React, { useCallback, useEffect, useMemo, useState, memo } from 'react';
 
 import {
   FormikValues,
@@ -122,6 +122,11 @@ export const usePersistFormikValues = (
   formik: FormikType,
   options: PersistFormikValuesProps
 ): void => {
+  if (!formik) {
+    console.warn('usePersistFormikValues requires a valid Formik instance');
+    return;
+  }
+
   const { debounce = 300, persistInvalid, ignoreValues } = options;
   const { values, setValues, isValid, initialValues } = formik;
   const [persistedString, persistValues] = usePersistedString(formik, options);
@@ -155,8 +160,13 @@ export const usePersistFormikValues = (
   useDebounce(handlePersist, debounce, [stringValues, isValid, persistInvalid]);
 };
 
-const PersistFormikValuesMemo: FC<PersistFormikValuesProps> = props => {
+const PersistFormikValuesMemo: React.FC<PersistFormikValuesProps> = props => {
   const formik = useFormikContext<any>();
+
+  if (!formik) {
+    console.warn('PersistFormikValues must be used within a Formik context');
+    return null;
+  }
 
   usePersistFormikValues(formik, props);
 

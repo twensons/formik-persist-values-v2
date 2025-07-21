@@ -1,7 +1,7 @@
 {
-  "name": "formik-persist-values-v2",
+  "name": "@twensons/formik-persist-values-v2",
   "description": "Fork of formik-persist-values with updated dependencies for React 18+ and modern ecosystem",
-  "version": "2.0.0",
+  "version": "1.0.0",
   "license": "MIT",
   "author": "Grigoriy Kolenko <kolenko@me.com> (original), Twensons (update)",
   "repository": "twensons/formik-persist-values-v2",
@@ -42,8 +42,8 @@
     "react": ">=16"
   },
   "resolutions": {
-    "@types/react": "16.9.17",
-    "@types/react-dom": "16.0.6"
+    "@types/react": "^19.1.8",
+    "@types/react-dom": "^19.1.6"
   },
   "devDependencies": {
     "@types/jest": "24.0.25",

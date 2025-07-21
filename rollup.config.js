@@ -13,7 +13,7 @@ const globalPackages = {
 const shared = {
   input: `compiled/PersistFormikValues.js`,
   plugins: [sourceMaps()],
-  external: Object.keys(globalPackages),
+  external: ['react', 'formik'],
 };
 
 export default [
@@ -32,7 +32,9 @@ export default [
         include: /node_modules/,
       }),
       sourceMaps(),
-      terser(),
+      terser({
+        mangle: false
+      }),
       filesize(),
     ],
   }),
@@ -51,7 +53,9 @@ export default [
         include: /node_modules/,
       }),
       sourceMaps(),
-      terser(),
+      terser({
+        mangle: false
+      }),
     ],
   }),
 
@@ -69,7 +73,9 @@ export default [
         include: /node_modules/,
       }),
       sourceMaps(),
-      terser(),
+      terser({
+        mangle: false
+      }),
     ],
   }),
 ];
