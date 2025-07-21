@@ -6,8 +6,9 @@
     "emitDecoratorMetadata": false,
     "experimentalDecorators": false,
     "importHelpers": true,
-    "jsx": "react",
-    "lib": ["es2015", "dom"],
+    "jsx": "react-jsx",
+    "jsxImportSource": "react",
+    "lib": ["es2018", "dom"],
     "module": "es2015",
     "moduleResolution": "node",
     "noFallthroughCasesInSwitch": true,
@@ -23,9 +24,9 @@
     "strict": true,
     "strictNullChecks": true,
     "stripInternal": true,
-    "target": "es5",
-    "types": ["formik", "react", "jest"],
-    "typeRoots": ["node_modules"]
+    "target": "es2018",
+    "types": ["react", "jest"],
+    "typeRoots": ["node_modules/@types"]
   },
   "include": ["src", "./typings.d.ts"],
   "exclude": ["node_modules", "dist"]
