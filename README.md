@@ -1,25 +1,25 @@
 # Formik Persist Values
 
 <p>
-  <a href="https://www.npmjs.com/package/formik-persist-values">
+  <a href="https://www.npmjs.com/package/formik-persist-values-v2">
     <img height="20px" src="https://badgen.net/npm/license/formik-persist-values" />
   </a>
-  <a href="https://www.npmjs.com/package/formik-persist-values">
+  <a href="https://www.npmjs.com/package/formik-persist-values-v2">
     <img height="20px" src="https://badgen.net/npm/v/formik-persist-values" />
   </a>
-  <a href="https://www.npmjs.com/package/formik-persist-values">
+  <a href="https://www.npmjs.com/package/formik-persist-values-v2">
     <img height="20px" src="https://badgen.net/npm/dependents/formik-persist-values" />
   </a>
-  <a href="https://www.npmjs.com/package/formik-persist-values">
+  <a href="https://www.npmjs.com/package/formik-persist-values-v2">
     <img height="20px" src="https://badgen.net/npm/types/formik-persist-values" />
   </a>
-  <a href="https://github.com/kolengri/formik-persist-values#readme">
+  <a href="https://github.com/kolengri/formik-persist-values-v2#readme">
     <img height="20px" src="https://badgen.net/github/issues/kolengri/formik-persist-values" />
   </a>
-  <a href="https://bundlephobia.com/result?p=formik-persist-values">
+  <a href="https://bundlephobia.com/result?p=formik-persist-values-v2">
     <img height="20px" src="https://badgen.net/bundlephobia/min/formik-persist-values" />
   </a>
-  <a href="https://bundlephobia.com/result?p=formik-persist-values">
+  <a href="https://bundlephobia.com/result?p=formik-persist-values-v2">
     <img height="20px" src="https://badgen.net/bundlephobia/minzip/formik-persist-values" />
   </a>
 </p>
@@ -27,11 +27,11 @@
 Persist and rehydrate a [Formik](https://github.com/jaredpalmer/formik) form values.
 
 ```
-npm install formik-persist-values --save
+npm install formik-persist-values-v2 --save
 ```
 
 ```
-yarn add formik-persist-values
+yarn add formik-persist-values-v2
 ```
 
 # Basic Usage
@@ -41,7 +41,7 @@ Just import the `<PersistFormikValues >` component and put it inside any Formik 
 ```js
 import React from 'react';
 import { Formik, Field, Form } from 'formik';
-import { PersistFormikValues } from 'formik-persist-values';
+import { PersistFormikValues } from 'formik-persist-values-v2';
 
 export const Signup = () => (
   <div>

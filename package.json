@@ -1,7 +1,7 @@
 {
-  "name": "@twensons/formik-persist-values-v2",
+  "name": "formik-persist-values-v2",
   "description": "Fork of formik-persist-values with updated dependencies for React 18+ and modern ecosystem",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "license": "MIT",
   "author": "Grigoriy Kolenko <kolenko@me.com> (original), Twensons (update)",
   "repository": "twensons/formik-persist-values-v2",
